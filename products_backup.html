@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Fusion Pharmaceuticals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        :root {
+            --primary: #1a6fb0;
+            --primary-dark: #0d4f7c;
+            --secondary: #2ecc71;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ===== HEADER & NAVBAR STYLES ===== */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== FOOTER STYLES ===== */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            padding: 0 15px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-about {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: white;
+        }
+
+        .footer-social-icon:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-links i {
+            width: 20px;
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== PRODUCTS PAGE SPECIFIC ===== */
+        .products-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(26, 111, 176, 0.9), rgba(13, 79, 124, 0.9)), 
+                        url('https://www.digitalunite.com/sites/default/files/inline-images/medicines.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .products-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .products-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .categories-section {
+            padding: 80px 0 40px;
+            background-color: var(--light);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-card.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .category-card.active .category-icon {
+            color: white;
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .products-section {
+            padding: 60px 0 80px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .product-description {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .spec {
+            background-color: var(--light-gray);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .quality-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .quality-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .quality-text {
+            flex: 1;
+        }
+
+        .quality-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .quality-text h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .quality-features {
+            list-style-type: none;
+            margin-top: 30px;
+        }
+
+        .quality-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+
+        .quality-features li:last-child {
+            border-bottom: none;
+        }
+
+        .quality-features li i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .quality-image {
+            flex: 1;
+        }
+
+        .quality-image img {
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            width: 100%;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            .products-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .quality-content {
+                flex-direction: column;
+            }
+
+            .quality-text h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links li {
+                margin-bottom: 15px;
+            }
+            
+            .products-hero {
+                padding: 130px 0 60px;
+            }
+            
+            .products-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .categories-section, .products-section, .quality-section {
+                padding: 60px 0;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .products-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 22px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .category-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-pills logo-icon"></i>
+                <div class="logo-text">Fusion<span>Pharmaceuticals</span></div>
+            </div>
+            
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Products Hero -->
+    <section class="products-hero">
+        <div class="container">
+            <h1>Our Pharmaceutical Products</h1>
+            <p>High-quality medicines across multiple therapeutic categories, sourced from trusted international manufacturers.</p>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Product Categories</h2>
+                <p>Browse our comprehensive range of pharmaceutical products by therapeutic category.</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card active" data-category="all">
+                    <i class="fas fa-boxes category-icon"></i>
+                    <h3>All Products</h3>
+                    <p>Complete range of medicines</p>
+                </div>
+                
+                <div class="category-card" data-category="vaccines">
+                    <i class="fas fa-syringe category-icon"></i>
+                    <h3>Vaccines</h3>
+                    <p>Immunization products</p>
+                </div>
+                
+                <div class="category-card" data-category="antibiotics">
+                    <i class="fas fa-bacteria category-icon"></i>
+                    <h3>Antibiotics</h3>
+                    <p>Anti-infective agents</p>
+                </div>
+                
+                <div class="category-card" data-category="cardiology">
+                    <i class="fas fa-heartbeat category-icon"></i>
+                    <h3>Cardiology</h3>
+                    <p>Heart & vascular medicines</p>
+                </div>
+                
+                <div class="category-card" data-category="diabetology">
+                    <i class="fas fa-heart category-icon"></i>
+                    <h3>Diabetology</h3>
+                    <p>Diabetes management</p>
+                </div>
+                
+                <div class="category-card" data-category="pediatrics">
+                    <i class="fas fa-baby category-icon"></i>
+                    <h3>Pediatrics</h3>
+                    <p>Children's medicines</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="productsContainer">
+                <!-- Vaccines Products -->
+                <div class="product-card" data-category="vaccines">
+                    <div class="product-img">
+                        <img src="https://media.istockphoto.com/id/1304499871/photo/medical-disposable-syringe-for-vaccine-injection-and-glass-vial.jpg?s=612x612&w=0&k=20&c=Hyrdv7Iz9dq_RdOiE7htszWa93bkCSpaiOS04lqG2eQ=" alt="COVID-19 Vaccine">
+                        <div class="product-category">Vaccines</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>COVID-19 Vaccine</h3>
+                        <p class="product-description">mRNA-based vaccine for prevention of COVID-19 infection, approved for emergency use.</p>
+                        
+                        <div class="product-specs">
+                            <span class="spec">mRNA Technology</span>
+                            <span class="spec">2-dose regimen</span>
+                            <span class="spec">Cold Chain Required</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn">Request Information</a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="vaccines">
+                    <div class="product-img">
+                        <img src="data:image/jpeg;base64,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" alt="Influenza Vaccine">
+                        <div class="product-category">Vaccines</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Seasonal Influenza Vaccine</h3>
+                        <p class="product-description">Quadrivalent influenza vaccine offering protection against four flu virus strains.</p>
+                        
+                        <div class="product-specs">
+                            <span class="spec">Quadrivalent</span>
+                            <span class="spec">Annual Dose</span>
+                            <span class="spec">2-8°C Storage</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn">Request Information</a>
+                    </div>
+                </div>
+                
+                <!-- Antibiotics Products -->
+                <div class="product-card" data-category="antibiotics">
+                    <div class="product-img">
+                        <img src="https://www.scabpharmacy.com/wp-content/uploads/2024/10/Amoxicillin-500mg-caps-3-scaled.jpg" alt="Antibiotic Medicine">
+                        <div class="product-category">Antibiotics</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Amoxicillin Capsules</h3>
+                        <p class="product-description">Broad-spectrum antibiotic used to treat various bacterial infections.</p>
+                        
+                        <div class="product-specs">
+                            <span class="spec">Capsule Form</span>
+                            <span class="spec">250mg/500mg</span>
+                            <span class="spec">21 Capsules</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn">Request Information</a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="antibiotics">
+                    <div class="product-img">
+                        <img src="https://integratedlaboratories.in/wp-content/uploads/2022/04/Ceftriaxone-250mg-Intriax-injection-scaled.jpg" alt="Antibiotic Injection">
+                        <div class="product-category">Antibiotics</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Ceftriaxone Injection</h3>
+                        <p class="product-description">Third-generation cephalosporin antibiotic for serious bacterial infections.</p>
+                        
+                        <div class="product-specs">
+                            <span class="spec">Injection</span>
+                            <span class="spec">1g Vial</span>
+                            <span class="spec">Hospital Use</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn">Request Information</a>
+                    </div>
+                </div>
+                
+
+
+                <!-- Cardiology Products -->
+                <div class="product-card" data-category="cardiology">
+                    <div class="product-img">
+                        <img src="https://medecify.com/wp-content/uploads/2025/07/F-A-E-F-FE-D-3000x3000.jpeg" alt="Cardiology Medicine">
+                        <div class="product-category">Cardiology</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Atorvastatin Tablets</h3>
+                        <p class="product-description">Cholesterol-lowering medication for the prevention of cardiovascular diseases.</p>
+                        
+                        <div class="product-specs">
+                            <span class="spec">Tablet Form</span>
+                            <span class="spec">10mg/20mg</span>
+                            <span class="spec">30 Tablets</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn">Request Information</a>
+                    </div>
+                </div>
+                
+
+
+
+                <div class="product-card" data-category="cardiology">
+                    <div class="product-img">
+                        <img src="https://cpimg.tistatic.com/08202930/b/4/5-MG-Amlodipine-Besylate-Tablets-USP.jpg" alt="Blood Pressure Medicine">
+                        <div class="product-category">Cardiology</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Amlodipine Besylate</h3>
+                        <p class="product-description">Calcium channel blocker used to treat high blood pressure and coronary artery disease.</p>
+                        
+                        <div class="product-specs">
+                            <span class="spec">Tablet Form</span>
+                            <span class="spec">5mg/10mg</span>
+                            <span class="spec">90 Tablets</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn">Request Information</a>
+                    </div>
+                </div>
+
+                
+                <!-- Diabetology Products -->
+                <div class="product-card" data-category="diabetology">
+                    <div class="product-img">
+                        <img src="https://cdn.mos.cms.futurecdn.net/Njm9e5KQezGBFwYRjaTkbC-650-80.jpg.webp" alt="Diabetes Medicine">
+                        <div class="product-category">Diabetology</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Metformin Tablets</h3>
+                        <p class="product-description">First-line medication for the treatment of type 2 diabetes mellitus.</p>
+                        
+                        <div class="product-specs">
+                            <span class="spec">Tablet Form</span>
+                            <span class="spec">500mg/850mg</span>
+                            <span class="spec">60 Tablets</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn">Request Information</a>
+                    </div>
+                </div>
+
+                
+
+
+
+
+
+<!-- Product 1 -->
+<div class="product-card" data-category="cardiology">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/ator_range.jpg" alt="ATOR">
+        <div class="product-category">Cardiology</div>
+    </div>
+    <div class="product-content">
+        <h3>ATOR</h3>
+        <p class="product-description">Atorvastatin tablets used to reduce cholesterol levels and prevent cardiovascular diseases.</p>
+        <div class="product-specs">
+            <span class="spec">Tablet Form</span>
+            <span class="spec">10mg/20mg</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 2 -->
+<div class="product-card" data-category="analgesic">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/brucet_tab.jpg" alt="BRUCET TAB">
+        <div class="product-category">Pain Relief</div>
+    </div>
+    <div class="product-content">
+        <h3>BRUCET TAB</h3>
+        <p class="product-description">Combination of Ibuprofen and Paracetamol used for relief from pain, inflammation and fever.</p>
+        <div class="product-specs">
+            <span class="spec">Tablet</span>
+            <span class="spec">Ibuprofen + Paracetamol</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 3 -->
+<div class="product-card" data-category="analgesic">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/brucet_susp.jpg" alt="BRUCET Suspension">
+        <div class="product-category">Pain Relief</div>
+    </div>
+    <div class="product-content">
+        <h3>BRUCET Suspension</h3>
+        <p class="product-description">Ibuprofen and Paracetamol suspension used for fever and pain relief in children.</p>
+        <div class="product-specs">
+            <span class="spec">Suspension</span>
+            <span class="spec">Pediatric Use</span>
+            <span class="spec">Bottle Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 4 -->
+<div class="product-card" data-category="ent">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/decon_.jpg" alt="DECON">
+        <div class="product-category">ENT</div>
+    </div>
+    <div class="product-content">
+        <h3>DECON</h3>
+        <p class="product-description">Nasal decongestant drops used to relieve nasal congestion caused by colds or allergies.</p>
+        <div class="product-specs">
+            <span class="spec">Nasal Drops</span>
+            <span class="spec">Decongestant</span>
+            <span class="spec">Bottle Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 5 -->
+<div class="product-card" data-category="analgesic">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/dolofen_.jpg" alt="DOLOFEN GEL">
+        <div class="product-category">Pain Relief</div>
+    </div>
+    <div class="product-content">
+        <h3>DOLOFEN GEL</h3>
+        <p class="product-description">Topical anti-inflammatory gel used for muscle pain, sprains and joint inflammation.</p>
+        <div class="product-specs">
+            <span class="spec">Topical Gel</span>
+            <span class="spec">Diclofenac</span>
+            <span class="spec">Tube Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 6 -->
+<div class="product-card" data-category="analgesic">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/dolofen_SR.jpg" alt="DOLOFEN SR">
+        <div class="product-category">Pain Relief</div>
+    </div>
+    <div class="product-content">
+        <h3>DOLOFEN SR</h3>
+        <p class="product-description">Sustained-release Diclofenac tablets used for long-lasting pain and inflammation relief.</p>
+        <div class="product-specs">
+            <span class="spec">SR Tablet</span>
+            <span class="spec">Diclofenac</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 7 -->
+<div class="product-card" data-category="analgesic">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/kelac_.jpg" alt="KELAC">
+        <div class="product-category">Pain Relief</div>
+    </div>
+    <div class="product-content">
+        <h3>KELAC</h3>
+        <p class="product-description">Ketorolac injection used for short-term management of moderate to severe pain.</p>
+        <div class="product-specs">
+            <span class="spec">Injection</span>
+            <span class="spec">Ketorolac</span>
+            <span class="spec">Ampoule Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 8 -->
+<div class="product-card" data-category="dental">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/orohex_M_gel.jpg" alt="OROHEX-M GEL">
+        <div class="product-category">Dental Care</div>
+    </div>
+    <div class="product-content">
+        <h3>OROHEX-M GEL</h3>
+        <p class="product-description">Dental gel used for treatment of mouth ulcers, gingivitis and gum infections.</p>
+        <div class="product-specs">
+            <span class="spec">Oral Gel</span>
+            <span class="spec">Dental Care</span>
+            <span class="spec">Tube Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 9 -->
+<div class="product-card" data-category="diabetology">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/empact_10.jpg" alt="EMPACT">
+        <div class="product-category">Diabetology</div>
+    </div>
+    <div class="product-content">
+        <h3>EMPACT</h3>
+        <p class="product-description">Empagliflozin tablets used for management of type 2 diabetes mellitus.</p>
+        <div class="product-specs">
+            <span class="spec">Tablet</span>
+            <span class="spec">10mg</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 10 -->
+<div class="product-card" data-category="cardiology">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/neva_range.jpg" alt="NEVA">
+        <div class="product-category">Cardiology</div>
+    </div>
+    <div class="product-content">
+        <h3>NEVA</h3>
+        <p class="product-description">Nebivolol tablets used to treat high blood pressure and improve heart health.</p>
+        <div class="product-specs">
+            <span class="spec">Tablet</span>
+            <span class="spec">5mg</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 11 -->
+<div class="product-card" data-category="cardiology">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/losap_range_.jpg" alt="LOSAP">
+        <div class="product-category">Cardiology</div>
+    </div>
+    <div class="product-content">
+        <h3>LOSAP</h3>
+        <p class="product-description">Losartan tablets used for management of hypertension and related cardiovascular risk.</p>
+        <div class="product-specs">
+            <span class="spec">Tablet Form</span>
+            <span class="spec">25mg/50mg</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 12 -->
+<div class="product-card" data-category="cardiology">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/losap_H.jpg" alt="LOSAP-H">
+        <div class="product-category">Cardiology</div>
+    </div>
+    <div class="product-content">
+        <h3>LOSAP-H</h3>
+        <p class="product-description">Losartan + Hydrochlorothiazide combination used for blood pressure control.</p>
+        <div class="product-specs">
+            <span class="spec">Tablet Form</span>
+            <span class="spec">Combination Drug</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 13 -->
+<div class="product-card" data-category="diabetology">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/formin_SR_range.jpg" alt="FORMIN-SR">
+        <div class="product-category">Diabetology</div>
+    </div>
+    <div class="product-content">
+        <h3>FORMIN-SR</h3>
+        <p class="product-description">Metformin sustained-release tablets used to help control blood glucose in type 2 diabetes.</p>
+        <div class="product-specs">
+            <span class="spec">SR Tablet</span>
+            <span class="spec">500mg/1000mg</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 14 -->
+<div class="product-card" data-category="diabetology">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/formin_G1.jpg" alt="FORMIN-G1">
+        <div class="product-category">Diabetology</div>
+    </div>
+    <div class="product-content">
+        <h3>FORMIN-G1</h3>
+        <p class="product-description">Glimepiride + Metformin combination used for glycaemic control in type 2 diabetes.</p>
+        <div class="product-specs">
+            <span class="spec">SR Tablet</span>
+            <span class="spec">Combination Drug</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 15 -->
+<div class="product-card" data-category="allergy">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/lctz_.jpg" alt="L-CTZ Syrup">
+        <div class="product-category">Allergy</div>
+    </div>
+    <div class="product-content">
+        <h3>L-CTZ Syrup</h3>
+        <p class="product-description">Levocetirizine syrup used for allergic rhinitis symptoms and urticaria (hives).</p>
+        <div class="product-specs">
+            <span class="spec">Syrup</span>
+            <span class="spec">2.5mg/5ml</span>
+            <span class="spec">30 ml Bottle</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 16 -->
+<div class="product-card" data-category="antiseptic">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/ovidon_.jpg" alt="OVIDON Solution">
+        <div class="product-category">Antiseptic</div>
+    </div>
+    <div class="product-content">
+        <h3>OVIDON Solution</h3>
+        <p class="product-description">Povidone-iodine solution used for antiseptic cleansing of cuts, wounds, and minor burns.</p>
+        <div class="product-specs">
+            <span class="spec">Solution</span>
+            <span class="spec">Povidone Iodine</span>
+            <span class="spec">30/100 ml</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 17 -->
+<div class="product-card" data-category="cardiology">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2023/07/Telmi-80am-360x220.jpg" alt="TELMI 80 AM">
+        <div class="product-category">Cardiology</div>
+    </div>
+    <div class="product-content">
+        <h3>TELMI 80 AM</h3>
+        <p class="product-description">Combination antihypertensive used for controlling high blood pressure in indicated patients.</p>
+        <div class="product-specs">
+            <span class="spec">Tablet Form</span>
+            <span class="spec">Combination Drug</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 18 -->
+<div class="product-card" data-category="cardiology">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/amlod_AT.jpg" alt="AMLOD-AT">
+        <div class="product-category">Cardiology</div>
+    </div>
+    <div class="product-content">
+        <h3>AMLOD-AT</h3>
+        <p class="product-description">Combination blood pressure medicine used for hypertension management.</p>
+        <div class="product-specs">
+            <span class="spec">Tablet Form</span>
+            <span class="spec">Combination Drug</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 19 -->
+<div class="product-card" data-category="cardiology">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/enpil_range.jpg" alt="ENPIL">
+        <div class="product-category">Cardiology</div>
+    </div>
+    <div class="product-content">
+        <h3>ENPIL</h3>
+        <p class="product-description">Antihypertensive medicine used for blood pressure control as prescribed.</p>
+        <div class="product-specs">
+            <span class="spec">Tablet Form</span>
+            <span class="spec">Strength Varies</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+<!-- Product 20 -->
+<div class="product-card" data-category="allergy">
+    <div class="product-img">
+        <img src="https://npl.com.np/wp-content/uploads/2022/11/ctz_tab.jpg" alt="CTZ TAB">
+        <div class="product-category">Allergy</div>
+    </div>
+    <div class="product-content">
+        <h3>CTZ TAB</h3>
+        <p class="product-description">Cetirizine tablets used for allergy symptoms such as sneezing, runny nose, and itching.</p>
+        <div class="product-specs">
+            <span class="spec">Tablet</span>
+            <span class="spec">Anti-Histamine</span>
+            <span class="spec">Blister Pack</span>
+        </div>
+        <a href="contact.html" class="btn">Request Information</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                
+               
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Quality Assurance Section -->
+    <section class="quality-section">
+        <div class="container">
+            <div class="quality-content">
+                <div class="quality-text">
+                    <h2>Quality Assurance</h2>
+                    <p>All our pharmaceutical products undergo rigorous quality checks and comply with international standards. We ensure every product meets strict safety, efficacy, and quality requirements.</p>
+                    
+                    <ul class="quality-features">
+                        <li><i class="fas fa-check-circle"></i> Sourced from WHO-GMP certified manufacturers</li>
+                        <li><i class="fas fa-check-circle"></i> Strict cold chain maintenance for temperature-sensitive products</li>
+                        <li><i class="fas fa-check-circle"></i> Comprehensive documentation and batch tracking</li>
+                        <li><i class="fas fa-check-circle"></i> Regular stability testing and quality audits</li>
+                        <li><i class="fas fa-check-circle"></i> Compliance with Nepalese drug regulatory requirements</li>
+                    </ul>
+                    
+                    <a href="contact.html" class="btn" style="margin-top: 30px;">Request Product Catalog</a>
+                </div>
+                
+                <div class="quality-image">
+                    <img src="https://simplerqms.com/wp-content/uploads/2024/07/laboratory-quality-assurance-qa.svg" alt="Quality Assurance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+   <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">Fusion<span>Pharma</span></div>
+                    <p class="footer-about">Fusion Pharmaceuticals is a premier medicine import, export, and delivery company based in Kathmandu, Nepal, dedicated to advancing healthcare through quality pharmaceutical solutions.</p>
+                    <div class="footer-social-links">
+                        <a href="contact.html" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="contact.html" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="contact.html" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="contact.html" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-syringe"></i> Our Services</a></li>
+                        <li><a href="products.html"><i class="fas fa-pills"></i> Products</a></li>
+                        <li><a href="contact.html"><i class="fas fa-address-book"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-pills"></i> Medicine Import</a></li>
+                        <li><a href="services.html"><i class="fas fa-plane-departure"></i> Medical distribution</a></li>
+                      
+                        <li><a href="services.html"><i class="fas fa-truck-medical"></i> Medicine Delivery</a></li>
+                        <li><a href="services.html"><i class="fas fa-temperature-low"></i> Medicine Storage</a></li>
+                        <li><a href="services.html"><i class="fas fa-clipboard-check"></i> Medicine Control</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i>Devanagar, Kathmandu</li>
+                        <li><i class="fas fa-phone-alt"></i> +977 9851059404</li>
+                        <li><i class="fas fa-envelope"></i> fusionpharma024@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Sun - Fri: 9:00 - 17:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Fusion Pharmaceuticals. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileToggle.querySelector('i').classList.toggle('fa-bars');
+            mobileToggle.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+        
+        // Product Category Filtering
+        const categoryCards = document.querySelectorAll('.category-card');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Update active category
+                categoryCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                
+                const selectedCategory = card.getAttribute('data-category');
+                
+                // Filter products
+                productCards.forEach(product => {
+                    if (selectedCategory === 'all' || product.getAttribute('data-category') === selectedCategory) {
+                        product.style.display = 'block';
+                        setTimeout(() => {
+                            product.style.opacity = '1';
+                            product.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        product.style.opacity = '0';
+                        product.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            product.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Product Cards Animation on Scroll
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        productCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Category Cards Animation
+        categoryCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 300 + (index * 100));
+        });
+    </script>
+</body>
+</html>

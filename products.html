@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Fusion Pharmaceuticals</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+        /* ===== GLOBAL STYLES ===== */
+        :root {
+            --primary: #1a6fb0;
+            --primary-dark: #0d4f7c;
+            --secondary: #2ecc71;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ===== HEADER & NAVBAR STYLES ===== */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== FOOTER STYLES ===== */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            padding: 0 15px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-about {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: white;
+        }
+
+        .footer-social-icon:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-links i {
+            width: 20px;
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== PRODUCTS PAGE SPECIFIC ===== */
+        .products-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(26, 111, 176, 0.9), rgba(13, 79, 124, 0.9)), 
+                        url('https://www.digitalunite.com/sites/default/files/inline-images/medicines.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .products-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .products-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .categories-section {
+            padding: 80px 0 40px;
+            background-color: var(--light);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-card.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .category-card.active .category-icon {
+            color: white;
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .products-section {
+            padding: 60px 0 80px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .product-description {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .spec {
+            background-color: var(--light-gray);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .quality-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .quality-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .quality-text {
+            flex: 1;
+        }
+
+        .quality-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .quality-text h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .quality-features {
+            list-style-type: none;
+            margin-top: 30px;
+        }
+
+        .quality-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+
+        .quality-features li:last-child {
+            border-bottom: none;
+        }
+
+        .quality-features li i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .quality-image {
+            flex: 1;
+        }
+
+        .quality-image img {
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            width: 100%;
+        }
+
+
+
+
+
+
+.product-img.icon-bg{
+  height: 180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg, #e6f2ff, #f7fbff);
+  border-radius: 12px 12px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.product-img.icon-bg i{
+  font-size: 64px;
+  color: #1e88e5;
+  opacity: 0.95;
+}
+.product-img.icon-bg .product-category{
+  position:absolute;
+  top: 12px;
+  right: 12px;
+}
+
+
+
+
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            .products-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .quality-content {
+                flex-direction: column;
+            }
+
+            .quality-text h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links li {
+                margin-bottom: 15px;
+            }
+            
+            .products-hero {
+                padding: 130px 0 60px;
+            }
+            
+            .products-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .categories-section, .products-section, .quality-section {
+                padding: 60px 0;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .products-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 22px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .category-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-pills logo-icon"></i>
+                <div class="logo-text">Fusion<span>Pharmaceuticals</span></div>
+            </div>
+            
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+<!-- Products Hero -->
+<section class="products-hero">
+    <div class="container">
+        <h1>Our Pharmaceutical Products</h1>
+        <p>High-quality medicines across multiple therapeutic categories, sourced from trusted international manufacturers.</p>
+    </div>
+</section>
+
+
+
+<!-- Categories Section -->
+<section class="categories-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Product Categories</h2>
+            <p>Browse our comprehensive range of pharmaceutical products by therapeutic category.</p>
+        </div>
+        
+        <div class="categories-grid">
+            <div class="category-card active" data-category="all">
+                <i class="fas fa-boxes category-icon"></i>
+                <h3>All Products</h3>
+                <p>Complete range of medicines</p>
+            </div>
+
+
+   
+
+
+            <div class="category-card" data-category="vaccines">
+                <i class="fas fa-syringe category-icon"></i>
+                <h3>Vaccines</h3>
+                <p>Immunization products</p>
+            </div>
+            
+
+
+
+
+            <div class="category-card" data-category="antibiotics">
+                <i class="fas fa-bacteria category-icon"></i>
+                <h3>Antibiotics</h3>
+                <p>Anti-infective agents</p>
+            </div>
+            
+            <div class="category-card" data-category="cardiology">
+                <i class="fas fa-heartbeat category-icon"></i>
+                <h3>Cardiology</h3>
+                <p>Heart & vascular medicines</p>
+            </div>
+            
+            <div class="category-card" data-category="diabetology">
+                <i class="fas fa-heart category-icon"></i>
+                <h3>Diabetology</h3>
+                <p>Diabetes management</p>
+            </div>
+            
+            <div class="category-card" data-category="pediatrics">
+                <i class="fas fa-baby category-icon"></i>
+                <h3>Pediatrics</h3>
+                <p>Children's medicines</p>
+            </div>
+
+            <!-- Added Categories -->
+
+            <div class="category-card" data-category="anesthetics">
+                <i class="fas fa-procedures category-icon"></i>
+                <h3>Anesthetics</h3>
+                <p>Pain control & surgical anesthesia</p>
+            </div>
+
+
+<div class="category-card" data-category="gastroenterology">
+    <i class="fas fa-capsules category-icon"></i>
+    <h3>Gastroenterology</h3>
+    <p>Digestive system medicines</p>
+</div>  
+
+
+<!-- 
+<div class="category-card" data-category="gynecology">
+                <i class="fas fa-venus category-icon"></i>
+                <h3>Gynecology</h3>
+                <p>Women's health medicines</p>
+            </div> -->
+
+            <div class="category-card" data-category="hematology">
+                <i class="fas fa-tint category-icon"></i>
+                <h3>Hematology</h3>
+                <p>Blood related treatments</p>
+            </div>
+
+            <div class="category-card" data-category="neurology">
+                <i class="fas fa-brain category-icon"></i>
+                <h3>Neurology</h3>
+                <p>Nervous system medicines</p>
+            </div>
+
+            <div class="category-card" data-category="obstetrics">
+                <i class="fas fa-user-md category-icon"></i>
+                <h3>Obs and Gynecology </h3>
+                <p>Maternal & reproductive healthcare</p>
+            </div>
+
+            <div class="category-card" data-category="oncology">
+                <i class="fas fa-ribbon category-icon"></i>
+                <h3>Oncology</h3>
+                <p>Cancer treatment medicines</p>
+            </div>
+
+            <div class="category-card" data-category="ophthalmology">
+                <i class="fas fa-eye category-icon"></i>
+                <h3>Ophthalmology</h3>
+                <p>Eye care medicines</p>
+            </div>
+
+            <div class="category-card" data-category="orthopedics">
+                <i class="fas fa-bone category-icon"></i>
+                <h3>Orthopedics</h3>
+                <p>Bone & joint treatments</p>
+            </div>
+
+           <div class="category-card" data-category="sexual-health">
+    <i class="fas fa-hand-holding-heart category-icon"></i>
+    <h3>Sexual Health</h3>
+    <p>Reproductive & sexual wellness</p>
+</div>
+
+
+           <div class="category-card" data-category="urology">
+    <i class="fas fa-flask category-icon"></i>
+    <h3>Urology</h3>
+    <p>Urinary system treatments</p>
+</div>
+
+        <div class="category-card" data-category="urology">
+  
+<i class="fas fa-hand-holding-heart category-icon"></i>
+
+
+    <h3>Many More</h3>
+    <p>Scroll down to explore all categories</p>
+</div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Products Section -->
+<section class="products-section">
+  <div class="container">
+    <div class="products-grid" id="productsContainer">
+
+      <!-- ===================== VACCINES (6) ===================== -->
+      <div class="product-card" data-category="vaccines">
+        <div class="product-img icon-bg">
+          <i class="fas fa-syringe"></i>
+          <div class="product-category">Vaccines</div>
+        </div>
+        <div class="product-content">
+          <h3>Seasonal Influenza Vaccine</h3>
+          <p class="product-description">Vaccine to reduce risk of seasonal influenza infection as per immunization guidelines.</p>
+          <div class="product-specs">
+            <span class="spec">Annual Dose</span><span class="spec">2–8°C Storage</span><span class="spec">IM Injection</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="vaccines">
+        <div class="product-img icon-bg">
+          <i class="fas fa-vial"></i>
+          <div class="product-category">Vaccines</div>
+        </div>
+        <div class="product-content">
+          <h3>Hepatitis B Vaccine</h3>
+          <p class="product-description">Vaccine used for prevention of hepatitis B virus infection.</p>
+          <div class="product-specs">
+            <span class="spec">Pediatric/Adult</span><span class="spec">Cold Chain</span><span class="spec">IM Injection</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="vaccines">
+        <div class="product-img icon-bg">
+          <i class="fas fa-shield-virus"></i>
+          <div class="product-category">Vaccines</div>
+        </div>
+        <div class="product-content">
+          <h3>MMR Vaccine</h3>
+          <p class="product-description">Vaccine used for prevention of measles, mumps, and rubella infections.</p>
+          <div class="product-specs">
+            <span class="spec">Routine Schedule</span><span class="spec">Cold Chain</span><span class="spec">SC Injection</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="vaccines">
+        <div class="product-img icon-bg">
+          <i class="fas fa-shield"></i>
+          <div class="product-category">Vaccines</div>
+        </div>
+        <div class="product-content">
+          <h3>Tetanus Toxoid Vaccine</h3>
+          <p class="product-description">Vaccine used to protect against tetanus infection as per vaccination schedule.</p>
+          <div class="product-specs">
+            <span class="spec">Booster</span><span class="spec">2–8°C Storage</span><span class="spec">IM Injection</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="vaccines">
+        <div class="product-img icon-bg">
+          <i class="fas fa-virus"></i>
+          <div class="product-category">Vaccines</div>
+        </div>
+        <div class="product-content">
+          <h3>Polio Vaccine</h3>
+          <p class="product-description">Vaccine used to prevent poliomyelitis and support routine immunization programs.</p>
+          <div class="product-specs">
+            <span class="spec">OPV/IPV</span><span class="spec">Cold Chain</span><span class="spec">Program Supply</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="vaccines">
+        <div class="product-img icon-bg">
+          <i class="fas fa-droplet"></i>
+          <div class="product-category">Vaccines</div>
+        </div>
+        <div class="product-content">
+          <h3>Typhoid Vaccine</h3>
+          <p class="product-description">Vaccine used for prevention of typhoid fever in eligible age groups.</p>
+          <div class="product-specs">
+            <span class="spec">Single Dose</span><span class="spec">Cold Chain</span><span class="spec">IM Injection</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+
+
+
+
+<div class="product-card" data-category="vaccines">
+  <div class="product-img icon-bg">
+    <i class="fas fa-syringe"></i>
+    <div class="product-category">Vaccines</div>
+  </div>
+
+  <div class="product-content">
+    <h3>Human Albumin Injection</h3>
+
+    <p class="product-description">
+      Human albumin solution used in hospitals for treatment of
+      hypoalbuminemia, burns and trauma conditions.
+    </p>
+
+    <div class="product-specs">
+      <span class="spec">IV Infusion</span>
+      <span class="spec">5% / 20%</span>
+      <span class="spec">Hospital Use</span>
+    </div>
+
+    <a href="contact.html" class="btn">Request Information</a>
+  </div>
+</div>
+
+
+<div class="product-card" data-category="vaccines">
+  <div class="product-img icon-bg">
+    <i class="fas fa-vial"></i>
+    <div class="product-category">Vaccines</div>
+  </div>
+
+  <div class="product-content">
+    <h3>IVIG Injection (Intravenous Immunoglobulin)</h3>
+
+    <p class="product-description">
+      Intravenous immunoglobulin therapy used for immune deficiency
+      and autoimmune disease treatment.
+    </p>
+
+    <div class="product-specs">
+      <span class="spec">IV Infusion</span>
+      <span class="spec">Cold Chain</span>
+      <span class="spec">Hospital Use</span>
+    </div>
+
+    <a href="contact.html" class="btn">Request Information</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- ===================== ANTIBIOTICS (8) ===================== -->
+      <div class="product-card" data-category="antibiotics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-capsules"></i>
+          <div class="product-category">Antibiotics</div>
+        </div>
+        <div class="product-content">
+          <h3>Amoxicillin Capsules</h3>
+          <p class="product-description">Broad-spectrum antibiotic used to treat various bacterial infections.</p>
+          <div class="product-specs">
+            <span class="spec">Capsule</span><span class="spec">250mg / 500mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="antibiotics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-tablets"></i>
+          <div class="product-category">Antibiotics</div>
+        </div>
+        <div class="product-content">
+          <h3>Azithromycin Tablets</h3>
+          <p class="product-description">Antibiotic used for respiratory and soft tissue bacterial infections as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">250mg / 500mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="antibiotics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-capsules"></i>
+          <div class="product-category">Antibiotics</div>
+        </div>
+        <div class="product-content">
+          <h3>Doxycycline Capsules</h3>
+          <p class="product-description">Antibiotic used for selected bacterial infections as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Capsule</span><span class="spec">100mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="antibiotics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-tablets"></i>
+          <div class="product-category">Antibiotics</div>
+        </div>
+        <div class="product-content">
+          <h3>Metronidazole Tablets</h3>
+          <p class="product-description">Antimicrobial used for anaerobic bacterial and protozoal infections as indicated.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">400mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="antibiotics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-syringe"></i>
+          <div class="product-category">Antibiotics</div>
+        </div>
+        <div class="product-content">
+          <h3>Ceftriaxone Injection</h3>
+          <p class="product-description">Cephalosporin antibiotic injection for serious bacterial infections in clinical use.</p>
+          <div class="product-specs">
+            <span class="spec">Injection</span><span class="spec">1g Vial</span><span class="spec">Hospital Use</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="antibiotics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-syringe"></i>
+          <div class="product-category">Antibiotics</div>
+        </div>
+        <div class="product-content">
+          <h3>Gentamicin Injection</h3>
+          <p class="product-description">Antibiotic injection used for selected serious bacterial infections in clinical settings.</p>
+          <div class="product-specs">
+            <span class="spec">Injection</span><span class="spec">80mg/2ml</span><span class="spec">Hospital Use</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="antibiotics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-jar"></i>
+          <div class="product-category">Antibiotics</div>
+        </div>
+        <div class="product-content">
+          <h3>Amoxicillin-Clavulanate Suspension</h3>
+          <p class="product-description">Combination antibiotic suspension used for selected bacterial infections as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Dry Syrup</span><span class="spec">Pediatric/Adult</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="antibiotics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-hand-holding-medical"></i>
+          <div class="product-category">Antibiotics</div>
+        </div>
+        <div class="product-content">
+          <h3>Mupirocin Ointment</h3>
+          <p class="product-description">Topical antibiotic used for selected bacterial skin infections as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Ointment</span><span class="spec">5g / 10g</span><span class="spec">Topical</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+
+      <!-- ===================== CARDIOLOGY (8) ===================== -->
+      <div class="product-card" data-category="cardiology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-heartbeat"></i>
+          <div class="product-category">Cardiology</div>
+        </div>
+        <div class="product-content">
+          <h3>Amlodipine Tablets</h3>
+          <p class="product-description">Used in management of high blood pressure as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">5mg / 10mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="cardiology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-notes-medical"></i>
+          <div class="product-category">Cardiology</div>
+        </div>
+        <div class="product-content">
+          <h3>Atorvastatin Tablets</h3>
+          <p class="product-description">Statin medicine used to help manage cholesterol levels as advised.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">10mg / 20mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="cardiology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-wave-square"></i>
+          <div class="product-category">Cardiology</div>
+        </div>
+        <div class="product-content">
+          <h3>Losartan Tablets</h3>
+          <p class="product-description">ARB medicine used for blood pressure management as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">25mg / 50mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="cardiology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-heart"></i>
+          <div class="product-category">Cardiology</div>
+        </div>
+        <div class="product-content">
+          <h3>Telmisartan Tablets</h3>
+          <p class="product-description">ARB medicine used for management of hypertension under medical advice.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">40mg / 80mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="cardiology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-stethoscope"></i>
+          <div class="product-category">Cardiology</div>
+        </div>
+        <div class="product-content">
+          <h3>Metoprolol Tablets</h3>
+          <p class="product-description">Beta blocker used for blood pressure and heart rate control as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">25mg / 50mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="cardiology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-heart-circle-check"></i>
+          <div class="product-category">Cardiology</div>
+        </div>
+        <div class="product-content">
+          <h3>Clopidogrel Tablets</h3>
+          <p class="product-description">Antiplatelet medicine used in selected cardiovascular conditions as advised.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">75mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="cardiology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-pills"></i>
+          <div class="product-category">Cardiology</div>
+        </div>
+        <div class="product-content">
+          <h3>Aspirin (Low Dose) Tablets</h3>
+          <p class="product-description">Antiplatelet medicine used in selected cardiovascular conditions as advised.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">75mg / 81mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="cardiology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-droplet"></i>
+          <div class="product-category">Cardiology</div>
+        </div>
+        <div class="product-content">
+          <h3>Furosemide Tablets</h3>
+          <p class="product-description">Diuretic medicine used in selected cardiovascular and fluid retention conditions.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">20mg / 40mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+
+      <!-- ===================== DIABETOLOGY (7) ===================== -->
+      <div class="product-card" data-category="diabetology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-tint"></i>
+          <div class="product-category">Diabetology</div>
+        </div>
+        <div class="product-content">
+          <h3>Metformin Tablets</h3>
+          <p class="product-description">Common first-line medicine used for management of type 2 diabetes.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">500mg / 850mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="diabetology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-tablets"></i>
+          <div class="product-category">Diabetology</div>
+        </div>
+        <div class="product-content">
+          <h3>Glimepiride Tablets</h3>
+          <p class="product-description">Medicine used to help control blood glucose levels as advised.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">1mg / 2mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="diabetology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-pills"></i>
+          <div class="product-category">Diabetology</div>
+        </div>
+        <div class="product-content">
+          <h3>Gliclazide Tablets</h3>
+          <p class="product-description">Antidiabetic medicine used to help control blood sugar in type 2 diabetes as advised.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">40mg / 80mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="diabetology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-syringe"></i>
+          <div class="product-category">Diabetology</div>
+        </div>
+        <div class="product-content">
+          <h3>Insulin Injection (Vial/Pen)</h3>
+          <p class="product-description">Insulin used for diabetes management; options include vial and pen formats.</p>
+          <div class="product-specs">
+            <span class="spec">Injection</span><span class="spec">Cold Chain</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="diabetology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-vials"></i>
+          <div class="product-category">Diabetology</div>
+        </div>
+        <div class="product-content">
+          <h3>Blood Glucose Test Strips</h3>
+          <p class="product-description">Test strips for monitoring blood glucose levels with compatible glucometers.</p>
+          <div class="product-specs">
+            <span class="spec">Diagnostics</span><span class="spec">Pack Options</span><span class="spec">Home/Clinic</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="diabetology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-capsules"></i>
+          <div class="product-category">Diabetology</div>
+        </div>
+        <div class="product-content">
+          <h3>Sitagliptin Tablets</h3>
+          <p class="product-description">Medicine used for glucose control in type 2 diabetes as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">50mg / 100mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="diabetology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-pills"></i>
+          <div class="product-category">Diabetology</div>
+        </div>
+        <div class="product-content">
+          <h3>Empagliflozin Tablets</h3>
+          <p class="product-description">Medicine used for selected type 2 diabetes patients as advised.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">10mg / 25mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+
+      <!-- ===================== PEDIATRICS (6) ===================== -->
+      <div class="product-card" data-category="pediatrics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-baby"></i>
+          <div class="product-category">Pediatrics</div>
+        </div>
+        <div class="product-content">
+          <h3>Paracetamol Syrup</h3>
+          <p class="product-description">Used for relief of fever and mild pain in children as advised.</p>
+          <div class="product-specs">
+            <span class="spec">Syrup</span><span class="spec">120mg/5ml</span><span class="spec">Pediatric</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="pediatrics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-bottle-droplet"></i>
+          <div class="product-category">Pediatrics</div>
+        </div>
+        <div class="product-content">
+          <h3>Oral Rehydration Salts (ORS)</h3>
+          <p class="product-description">ORS sachets to help prevent dehydration due to diarrhea as per guidelines.</p>
+          <div class="product-specs">
+            <span class="spec">Sachets</span><span class="spec">WHO Formula</span><span class="spec">Pediatric/Adult</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="pediatrics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-seedling"></i>
+          <div class="product-category">Pediatrics</div>
+        </div>
+        <div class="product-content">
+          <h3>Zinc Supplement</h3>
+          <p class="product-description">Zinc supplementation used as per pediatric guidance.</p>
+          <div class="product-specs">
+            <span class="spec">10mg / 20mg</span><span class="spec">Tablet/Syrup</span><span class="spec">Pediatric</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="pediatrics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-capsules"></i>
+          <div class="product-category">Pediatrics</div>
+        </div>
+        <div class="product-content">
+          <h3>Multivitamin Drops</h3>
+          <p class="product-description">Vitamin drops to support nutritional supplementation in children as advised.</p>
+          <div class="product-specs">
+            <span class="spec">Drops</span><span class="spec">30ml Bottle</span><span class="spec">Pediatric</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="pediatrics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-head-side-cough"></i>
+          <div class="product-category">Pediatrics</div>
+        </div>
+        <div class="product-content">
+          <h3>Cough Syrup (Pediatric)</h3>
+          <p class="product-description">Pediatric cough preparation used as per physician guidance for symptom relief.</p>
+          <div class="product-specs">
+            <span class="spec">Syrup</span><span class="spec">100ml Bottle</span><span class="spec">Pediatric</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="pediatrics">
+        <div class="product-img icon-bg">
+          <i class="fas fa-bacteria"></i>
+          <div class="product-category">Pediatrics</div>
+        </div>
+        <div class="product-content">
+          <h3>Probiotic Sachets</h3>
+          <p class="product-description">Probiotic supplementation used as advised to support gut health in children.</p>
+          <div class="product-specs">
+            <span class="spec">Sachets</span><span class="spec">Pack Options</span><span class="spec">Pediatric</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+
+      <!-- ===================== EXTRA CATEGORIES (5) ===================== -->
+      <div class="product-card" data-category="gastroenterology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-stomach"></i>
+          <div class="product-category">Gastroenterology</div>
+        </div>
+        <div class="product-content">
+          <h3>Omeprazole Capsules</h3>
+          <p class="product-description">Used for acid-related conditions such as gastritis and reflux as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Capsule</span><span class="spec">20mg / 40mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="gynecology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-venus"></i>
+          <div class="product-category">Gynecology</div>
+        </div>
+        <div class="product-content">
+          <h3>Folic Acid Tablets</h3>
+          <p class="product-description">Supplement used to support healthy red blood cell formation as advised.</p>
+          <div class="product-specs">
+            <span class="spec">Tablet</span><span class="spec">5mg</span><span class="spec">Supplement</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="neurology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-brain"></i>
+          <div class="product-category">Neurology</div>
+        </div>
+        <div class="product-content">
+          <h3>Gabapentin Capsules</h3>
+          <p class="product-description">Medicine used for selected neuropathic pain and neurological conditions as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Capsule</span><span class="spec">100mg / 300mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="ophthalmology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-eye"></i>
+          <div class="product-category">Ophthalmology</div>
+        </div>
+        <div class="product-content">
+          <h3>Lubricating Eye Drops</h3>
+          <p class="product-description">Eye drops used to help relieve dryness and irritation as advised.</p>
+          <div class="product-specs">
+            <span class="spec">Drops</span><span class="spec">10ml</span><span class="spec">Ocular Use</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="urology">
+        <div class="product-img icon-bg">
+          <i class="fas fa-flask"></i>
+          <div class="product-category">Urology</div>
+        </div>
+        <div class="product-content">
+          <h3>Tamsulosin Capsules</h3>
+          <p class="product-description">Medicine used for urinary symptoms associated with enlarged prostate as prescribed.</p>
+          <div class="product-specs">
+            <span class="spec">Capsule</span><span class="spec">0.4mg</span><span class="spec">Prescription</span>
+          </div>
+          <a href="contact.html" class="btn">Request Information</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+    <!-- Quality Assurance Section -->
+    <section class="quality-section">
+        <div class="container">
+            <div class="quality-content">
+                <div class="quality-text">
+                    <h2>Quality Assurance</h2>
+                    <p>All our pharmaceutical products undergo rigorous quality checks and comply with international standards. We ensure every product meets strict safety, efficacy, and quality requirements.</p>
+                    
+                    <ul class="quality-features">
+                        <li><i class="fas fa-check-circle"></i> Sourced from WHO-GMP certified manufacturers</li>
+                        <li><i class="fas fa-check-circle"></i> Strict cold chain maintenance for temperature-sensitive products</li>
+                        <li><i class="fas fa-check-circle"></i> Comprehensive documentation and batch tracking</li>
+                        <li><i class="fas fa-check-circle"></i> Regular stability testing and quality audits</li>
+                        <li><i class="fas fa-check-circle"></i> Compliance with Nepalese drug regulatory requirements</li>
+                    </ul>
+                    
+                    <a href="contact.html" class="btn" style="margin-top: 30px;">Request Product Catalog</a>
+                </div>
+                
+                <div class="quality-image">
+                    <img src="https://simplerqms.com/wp-content/uploads/2024/07/laboratory-quality-assurance-qa.svg" alt="Quality Assurance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+   <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">Fusion<span>Pharma</span></div>
+                    <p class="footer-about">Fusion Pharmaceuticals is a premier medicine import, export, and delivery company based in Kathmandu, Nepal, dedicated to advancing healthcare through quality pharmaceutical solutions.</p>
+                    <div class="footer-social-links">
+                        <a href="contact.html" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="contact.html" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="contact.html" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="contact.html" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-syringe"></i> Our Services</a></li>
+                        <li><a href="products.html"><i class="fas fa-pills"></i> Products</a></li>
+                        <li><a href="contact.html"><i class="fas fa-address-book"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-pills"></i> Medicine Import</a></li>
+                        <li><a href="services.html"><i class="fas fa-plane-departure"></i> Medical distribution</a></li>
+                      
+                        <li><a href="services.html"><i class="fas fa-truck-medical"></i> Medicine Delivery</a></li>
+                        <li><a href="services.html"><i class="fas fa-temperature-low"></i> Medicine Storage</a></li>
+                        <li><a href="services.html"><i class="fas fa-clipboard-check"></i> Medicine Control</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i>Devanagar, Kathmandu</li>
+                        <li><i class="fas fa-phone-alt"></i> +977 9851059404</li>
+                        <li><i class="fas fa-envelope"></i> fusionpharma024@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Sun - Fri: 9:00 - 17:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Fusion Pharmaceuticals. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    
+
+
+<script>
+  // Mobile Navigation Toggle
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = mobileToggle.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-times');
+        }
+      });
+    });
+  }
+
+  // -------------------------------
+  // Product Category Filtering
+  // -------------------------------
+  const categoryCards = document.querySelectorAll('.category-card');
+
+  function getProductCards() {
+    return document.querySelectorAll('.product-card');
+  }
+
+  // Normalize category text (fixes vaccines not working)
+  function norm(value) {
+    return String(value || '').trim().toLowerCase();
+  }
+
+  categoryCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Update active category
+      categoryCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+
+      const selectedCategory = norm(card.getAttribute('data-category'));
+      const productCards = getProductCards();
+
+      // Filter products
+      productCards.forEach(product => {
+        const productCategory = norm(product.getAttribute('data-category'));
+
+        const match = (selectedCategory === 'all' || productCategory === selectedCategory);
+
+        if (match) {
+          product.style.display = 'block';
+          requestAnimationFrame(() => {
+            product.style.opacity = '1';
+            product.style.transform = 'translateY(0)';
+          });
+        } else {
+          product.style.opacity = '0';
+          product.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            product.style.display = 'none';
+          }, 250);
+        }
+      });
+    });
+  });
+
+  // -------------------------------
+  // Product Cards Animation on Scroll
+  // -------------------------------
+  const observerOptions = { threshold: 0.2, rootMargin: '0px 0px -50px 0px' };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // init animation state
+  getProductCards().forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    observer.observe(card);
+  });
+
+
+
+
+  // -------------------------------
+  // Category Cards Animation
+  // -------------------------------
+  categoryCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+
+    setTimeout(() => {
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, 300 + (index * 100));
+  });
+</script>
+
+
+
+
+
+
+</body>
+</html>
